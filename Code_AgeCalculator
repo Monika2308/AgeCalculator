@@ -1,0 +1,51 @@
+from datetime import datetime
+
+#for knowing present dd/mm/yyyy
+date = datetime.now()
+year = int(date.year)
+month = int(date.month)
+day = int(date.day)
+
+#Enter Your Birth Year
+input_year = int(input("Enter your birth year: "))
+if input_year <= 0 or input_year > 2021:
+    print("Alien Detected.!! Calling 100.. It's an EMERGENCY!!!")
+    exit()
+
+#Enter Your Birth Month
+input_month = int(input("Enter the month you were born: "))
+if input_month <= 0 or input_month > 12:
+    print("Don't try to fool me.!! Please Enter correct details.")
+    exit()
+
+#Enter Your Birth Date
+input_day = int(input("Enter the day you were born: "))
+if input_day <= 0 or input_day > 31:
+    print("Haha..That's Silly...Don't you know your birth date??")
+    exit()
+
+#For calculating your age now
+
+#Years
+age_year = year - input_year
+
+#Months
+age_month = month - input_month
+if age_month < 0:
+    age_year = age_year - 1
+    age_month = 12 - (input_month - month)
+#Days
+age_day = day - input_day
+
+
+if age_day < 0:
+    age_month = age_month - 1
+    age_day = 31 - (input_day - day)
+
+#Your Present Age is
+print("You are " + str(age_year) + " years, " + str(age_month) + " months and " + str(age_day) + " days old.")
+print("Thankyou, Visit again.")
+exit()
+
+if __name__ == "__main__":
+    main()
